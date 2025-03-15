@@ -7,7 +7,7 @@ import MobileSidebar from '@/components/MobileSidebar';
 import TopBar from '@/components/TopBar';
 import { SessionTabs } from '@/components/session';
 import Image from 'next/image';
-import line from "@/assets/images/line.png"
+import line from "@src/assets/images/line.png"
 // add my comment
 export default function SessionRequest() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
