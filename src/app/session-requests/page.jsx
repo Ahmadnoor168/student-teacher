@@ -7,7 +7,7 @@ import MobileSidebar from '@/components/MobileSidebar';
 import TopBar from '@/components/TopBar';
 import { SessionTabs } from '@/components/session';
 import Image from 'next/image';
-import line from "@src/assets/images/line.png"
+// import line from "@src/assets/images/line.png"
 // add my comment
 export default function SessionRequest() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -75,7 +75,7 @@ export default function SessionRequest() {
                       <span>{stat.change}</span>
                       <div className="w-16 h-8 ml-2 opacity-50">
                         <div className="w-full h-full rounded">
-                          {line && (
+                          {/* {line && (
                             <Image
                               src={line}
                               alt="Logo"
@@ -84,7 +84,7 @@ export default function SessionRequest() {
                               className="object-cover object-center"
                               priority
                             />
-                          )}
+                          )} */}
                         </div>
                       </div>
                     </div>
