@@ -146,16 +146,38 @@ export default function Login() {
 
   return (
     <div suppressHydrationWarning>
-      <main className="flex min-h-screen bg-[#0A0A0A] relative">
+      <main className="flex flex-col lg:flex-row min-h-screen bg-[#0A0A0A] relative">
         {/* Blur Circle */}
         <div className="fixed w-[200px] h-[200px] top-[-27px] left-[-34px] rounded-full bg-[#2EBFA5] blur-[200px]" />
 
-        {/* Left Section - Form */}
-        <div className="w-full lg:w-1/2 relative z-10">
+        {/* Image Section - Now shows on both mobile and desktop */}
+        <div className="w-full lg:w-1/2 h-[200px] lg:h-screen relative z-10 order-1 lg:order-2">
+          <div className="h-full p-4 lg:p-10">
+            <div className="relative w-full h-full rounded-3xl overflow-hidden">
+              {loginImage && (
+                <Image
+                  src={loginImage}
+                  alt="Teacher with blackboard"
+                  fill
+                  className="object-cover object-center"
+                  priority
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              )}
+              <div className="absolute inset-0 bg-[#2EBFA5]/80 flex flex-col items-center justify-center text-white p-4 lg:p-12 text-center">
+                <h2 className="text-2xl lg:text-4xl font-bold mb-2 lg:mb-4">Welcome Back</h2>
+                <p className="text-base lg:text-xl">Log in to continue your journey.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Form Section */}
+        <div className="w-full lg:w-1/2 relative z-10 order-2 lg:order-1">
           <div className="h-full p-6 lg:py-16">
             <div className="mx-auto lg:pl-20">
               {/* Logo */}
-              <div className="mb-10">
+              <div className="mb-6 lg:mb-10">
                 <div className="flex items-center gap-3">
                   <div className="w-[52px] h-[52px] bg-gradient-to-r from-[#20A2A0] to-[#2EBFA5] rounded-[9px] flex items-center justify-center">
                     {loginIcon && (
@@ -175,10 +197,10 @@ export default function Login() {
 
               {/* Welcome Text */}
               <div className="mb-6">
-                <h1 className="text-[34px] md:text-[40px] font-bold mb-3 text-white leading-tight">
+                <h1 className="text-[28px] md:text-[34px] lg:text-[40px] font-bold mb-3 text-white leading-tight">
                   Welcome to Tutoria!
                 </h1>
-                <p className="text-gray-400 text-base md:text-lg lg:text-[16px] leading-relaxed">
+                <p className="text-gray-400 text-sm lg:text-base leading-relaxed">
                   Your one-stop platform to explore personalized learning experiences and master new skills at your own pace
                 </p>
               </div>
@@ -271,28 +293,6 @@ export default function Login() {
                   </Link>
                 </div>
               </form>
-            </div>
-          </div>
-        </div>
-
-        {/* Right Section - Image */}
-        <div className="hidden lg:block lg:w-1/2 relative z-10">
-          <div className="h-full p-10">
-            <div className="relative w-full h-full rounded-3xl overflow-hidden">
-              {loginImage && (
-                <Image
-                  src={loginImage}
-                  alt="Teacher with blackboard"
-                  fill
-                  className="object-cover object-center"
-                  priority
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              )}
-              <div className="absolute inset-0 bg-[#2EBFA5]/80 flex flex-col items-center justify-center text-white p-12 text-center">
-                <h2 className="text-4xl font-bold mb-4">Welcome Back</h2>
-                <p className="text-xl">Log in to continue your journey.</p>
-              </div>
             </div>
           </div>
         </div>
